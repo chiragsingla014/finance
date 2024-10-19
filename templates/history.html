@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    HISTORY
+{% endblock %}
+
+{% block main %}
+
+
+
+<table class="table">
+    <tr>
+      <th>DATETIME</th>
+      <th>Symbol</th>
+      <th>No. of stocks</th>
+      <th>Bought/Sold</th>
+      <th>Buy/Sell price price</th>
+    </tr>
+
+{% for dict in listofdict %}
+    <tr>
+      <td>{{  dict.time  }}</td>
+      <td>{{  dict.symbol  }}</td>
+      <td>{{  dict.no_of_shares  }}</td>
+      <td>{{  dict.bs  }}</td>
+      <td>{{  dict.price | usd  }}</td>
+    </tr>
+{% endfor %}
+
+  </table>
+
+{% endblock %}

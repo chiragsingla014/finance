@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+
+
+
+<table class="table">
+    <tr>
+      <th>Symbol</th>
+      <th>No. of stocks</th>
+      <th>Current price</th>
+      <th>Current Value</th>
+    </tr>
+
+{% for dict in listofdict %}
+    <tr>
+      <td>{{  dict.symbol  }}</td>
+      <td>{{  dict.no_of_shares  }}</td>
+      <td>{{  dict.currentprice | usd  }}</td>
+      <td>{{  dict.currentvalue | usd  }}</td>
+    </tr>
+{% endfor %}
+
+  </table>
+
+  <p>Cash Left = {{  cash | usd  }}</p>
+  <p>Grand Total = {{  grandtotal | usd  }}</p>
+
+
+{% endblock %}
